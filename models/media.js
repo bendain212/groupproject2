@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
         len: [1]
       }
     },
-    body: {
+    categorization: {
       type: DataTypes.TEXT,
       allowNull: false,
       len: [1]
