@@ -51,4 +51,19 @@ module.exports = function(app) {
       });
     }
   });
+
+  app.post("/api/post", function(req, res) {
+    db.Media.create({
+      title: req.body.title,
+      categorization: req.body.categorization,
+      youtubeURL: req.body.youtubeURL
+    })
+      .then(function() {
+        //res.redirect("/api/login");
+        console.log("success");
+      })
+      .catch(function(err) {
+        console.log(err);
+      });
+  });
 };
