@@ -35,6 +35,9 @@ $(document).ready(function() {
     );
     postTitleInput.val("");
     youtubeURLInput.val("");
+    setTimeout(function() {
+      $("input[name=inputRadio]:checked", "#postForm").prop("checked", false);
+    });
   });
 
   function createPost(postTitle, categorization, youtubeURL, userid) {
@@ -54,5 +57,3 @@ $(document).ready(function() {
       });
   }
 });
-
-

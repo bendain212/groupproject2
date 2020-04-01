@@ -52,6 +52,16 @@ module.exports = function(app) {
     }
   });
 
+  app.get("/api/post", function(req, res) {
+    db.Media.findAll()
+      .then(function(data) {
+        res.json(data);
+      })
+      .catch(function(err) {
+        if (err) throw err;
+      });
+  });
+
   app.post("/api/post", function(req, res) {
     console.log(req.body);
     db.Media.create({
