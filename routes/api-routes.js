@@ -20,7 +20,8 @@ module.exports = function(app) {
   app.post("/api/signup", function(req, res) {
     db.User.create({
       email: req.body.email,
-      password: req.body.password
+      password: req.body.password,
+      paypal: req.body.paypal
     })
       .then(function() {
         res.redirect(307, "/api/login");
@@ -49,5 +50,22 @@ module.exports = function(app) {
         id: req.user.id
       });
     }
+  });
+
+  app.post("/api/post", function(req, res) {
+    console.log(req.body);
+    db.Media.create({
+      title: req.body.title,
+      categorization: req.body.categorization,
+      youtubeURL: req.body.youtubeURL,
+      UserId: req.body.UserId
+    })
+      .then(function() {
+        //res.redirect("/api/login");
+        console.log("success");
+      })
+      .catch(function(err) {
+        console.log(err);
+      });
   });
 };
