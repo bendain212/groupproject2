@@ -53,11 +53,12 @@ module.exports = function(app) {
   });
 
   app.post("/api/post", function(req, res) {
+    console.log(req.body);
     db.Media.create({
       title: req.body.title,
       categorization: req.body.categorization,
       youtubeURL: req.body.youtubeURL,
-      UserId: req.body.userid
+      UserId: req.body.UserId
     })
       .then(function() {
         //res.redirect("/api/login");
