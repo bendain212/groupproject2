@@ -14,7 +14,6 @@ $(document).ready(function() {
   $.get("/api/user_data").then(function(data) {
     $(".member-name").text(data.email);
     objuserid = data.id;
-    console.log(objuserid);
   });
 
   postForm.on("submit", function(event) {
