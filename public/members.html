@@ -29,7 +29,7 @@
       </div>
       <div class="col-md-6 col-md-offset-3">
         <h2>Create a Post</h2>
-        <form class="post">
+        <form class="post" id="postForm">
           <div class="form-group">
             <label for="postLabel"><label></label></label>
             <input
@@ -52,7 +52,8 @@
               type="radio"
               class="custom-control-input"
               id="standup"
-              name="defaultExampleRadios"
+              name="inputRadio"
+              value="Standup"
             />
             <label class="custom-control-label" for="standup">Standup</label>
           </div>
@@ -61,7 +62,8 @@
               type="radio"
               class="custom-control-input"
               id="improv"
-              name="defaultExampleRadios"
+              name="inputRadio"
+              value="Improv"
             />
             <label class="custom-control-label" for="improv">Improv</label>
           </div>
@@ -70,7 +72,8 @@
               type="radio"
               class="custom-control-input"
               id="live-show"
-              name="defaultExampleRadios"
+              name="inputRadio"
+              value="Live Show"
             />
             <label class="custom-control-label" for="live-show"
               >Live Show</label

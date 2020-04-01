@@ -9,9 +9,12 @@ $(document).ready(function() {
   var standupInput = $("input#standup-input");
   var improvInput = $("input#improv-input");
   var liveshowInput = $("input#improv-input");
+  var objuserid = "";
 
   $.get("/api/user_data").then(function(data) {
     $(".member-name").text(data.email);
+    objuserid = data.id;
+    console.log(objuserid);
   });
 
   postForm.on("submit", function(event) {
@@ -19,23 +22,31 @@ $(document).ready(function() {
     var postData = {
       postTitle: postTitleInput.val().trim(),
       youtubeURL: youtubeURLInput.val().trim(),
-      categorization: "test cat"
+      categorization: $("input[name=inputRadio]:checked", "#postForm").val()
     };
-    postTitleInput.val("");
-    youtubeURLInput.val("");
     console.log(postData.postTitle);
     console.log(postData.youtubeURL);
     console.log(postData.categorization);
+    console.log(objuserid);
+    createPost(
+      postData.postTitle,
+      postData.categorization,
+      postData.youtubeURL,
+      objuserid
+    );
+    postTitleInput.val("");
+    youtubeURLInput.val("");
   });
 
-  function createPost(postTitle, youtubeURL, categorization) {
+  function createPost(postTitle, categorization, youtubeURL, userid) {
     $.post("/api/post", {
-      
-      postTitle: postTitle,
+      title: postTitle,
+      categorization: categorization,
       youtubeURL: youtubeURL,
-      categorization: categorization
+      UserId: userid
     })
       .then(function() {
+        console.log("working");
         //window.location.replace("/root");
         // If there's an error, log the error
       })

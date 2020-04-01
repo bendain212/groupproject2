@@ -56,7 +56,8 @@ module.exports = function(app) {
     db.Media.create({
       title: req.body.title,
       categorization: req.body.categorization,
-      youtubeURL: req.body.youtubeURL
+      youtubeURL: req.body.youtubeURL,
+      UserId: req.body.userid
     })
       .then(function() {
         //res.redirect("/api/login");
