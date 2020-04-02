@@ -12,10 +12,12 @@ $(document).ready(function() {
   var improvInput = $("input#improv-input");
   var liveshowInput = $("input#improv-input");
   var objuserid = "";
+  let paypalUsername = "";
 
   $.get("/api/user_data").then(function(data) {
     $(".member-name").text(data.email);
     objuserid = data.id;
+    paypalUsername = data.paypal;
   });
 
   postForm.on("submit", function(event) {
@@ -33,6 +35,7 @@ $(document).ready(function() {
       postData.postTitle,
       postData.categorization,
       postData.youtubeURL,
+      paypalUsername,
       objuserid
     );
     postTitleInput.val("");
@@ -46,11 +49,18 @@ $(document).ready(function() {
     }, 2000);
   });
 
-  function createPost(postTitle, categorization, youtubeURL, userid) {
+  function createPost(
+    postTitle,
+    categorization,
+    youtubeURL,
+    paypalUsername,
+    userid
+  ) {
     $.post("/api/post", {
       title: postTitle,
       categorization: categorization,
       youtubeURL: youtubeURL,
+      paypalEmail: paypalUsername,
       UserId: userid
     })
       .then(function() {
@@ -63,4 +73,3 @@ $(document).ready(function() {
       });
   }
 });
-
