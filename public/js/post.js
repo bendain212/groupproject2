@@ -2,6 +2,8 @@ $(document).ready(function() {
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
 
+  $(".alert").hide();
+
   var postForm = $("form.post");
   var postTitleInput = $("input#title-input");
   var youtubeURLInput = $("input#youtubeURL-input");
@@ -38,6 +40,10 @@ $(document).ready(function() {
     setTimeout(function() {
       $("input[name=inputRadio]:checked", "#postForm").prop("checked", false);
     });
+    $(".alert").show();
+    setTimeout(function() {
+      $(".alert").hide();
+    }, 2000);
   });
 
   function createPost(postTitle, categorization, youtubeURL, userid) {
