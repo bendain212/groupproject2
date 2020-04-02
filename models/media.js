@@ -14,6 +14,9 @@ module.exports = function(sequelize, DataTypes) {
     },
     youtubeURL: {
       type: DataTypes.TEXT
+    },
+    paypalEmail: {
+      type: DataTypes.TEXT
     }
   });
 

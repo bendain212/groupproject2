@@ -69,7 +69,8 @@ module.exports = function(app) {
       title: req.body.title,
       categorization: req.body.categorization,
       youtubeURL: req.body.youtubeURL,
-      UserId: req.body.UserId
+      UserId: req.body.UserId,
+      paypalEmail: req.body.paypalEmail
     })
       .then(function() {
         //res.redirect("/api/login");
