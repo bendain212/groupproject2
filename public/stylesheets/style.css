@@ -1,4 +1,9 @@
-form.signup,
+/* form.signup,
 form.login {
   margin-top: 50px;
+} */
+
+.body {
+  background-image: url("../public/stylesheets/curtain_logo_copy.png")no-repeat center center;
+  background-size: cover;
 }
