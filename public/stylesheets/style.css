@@ -1,4 +1,32 @@
-form.signup,
+/* form.signup,
 form.login {
   margin-top: 50px;
+} */
+
+html {
+  background: url(curtainLOGO.png) no-repeat center center fixed;
+  background-size: cover;
 }
+
+body {
+  background-color: transparent !important;
+}
+
+.bg-light {
+  background-color: transparent !important;
+  box-shadow: 10px 10px 33px 28px rgba(0,0,0,0.45);
+}
+
+.navbar-brand {
+  font-weight: bolder;
+  color: white !important;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+a.nav-link {
+  font-weight: bolder;
+  color: white !important;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+
