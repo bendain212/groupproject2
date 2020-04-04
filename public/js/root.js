@@ -18,7 +18,7 @@ $.get("/api/post").then(function(data) {
   for (let i = 0; i < data.length; i++) {
     let youtubekey = YouTubeGetID(data[i].youtubeURL);
 
-    let posts = `<div class="card w-50">
+    let posts = `<div class="videocard">
       <div class="card-body">
         <h5 class="card-title">${data[i].title}</h5>
         <p class="card-text">
