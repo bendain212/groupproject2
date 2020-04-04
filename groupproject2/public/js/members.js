@@ -6,38 +6,34 @@ $(document).ready(function() {
     console.log(data);
   });
 
-  function YouTubeGetID(url){
-    var ID = '';
-    url = url.replace(/(>|<)/gi,'').split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
-    if(url[2] !== undefined) {
-      ID = url[2].split(/[^0-9a-z_\-]/i);
-      ID = ID[0];
-    }
-    else {
-      ID = url;
-    }
-    
-      return ID;
-  }
-
   $.get("/api/post").then(function(data) {
     console.log(data);
     for (let i = 0; i < data.length; i++) {
 
-     
+      function YouTubeGetID(url){
+        var ID = '';
+        url = url.replace(/(>|<)/gi,'').split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
+        if(url[2] !== undefined) {
+          ID = url[2].split(/[^0-9a-z_\-]/i);
+          ID = ID[0];
+        }
+        else {
+          ID = url;
+        }
+        console.log(ID)
+          return ID;
+      }
 
-     let youtubekey = YouTubeGetID(data[i].youtubeURL)
-     
+      YouTubeGetID(data[i].youtubeURL)
+
 
       
-
       let posts = `<div class="card w-50">
         <div class="card-body">
           <h5 class="card-title">${data[i].title}</h5>
           <p class="card-text">
           ${data[i].categorization}
           </p>
-
           <p class="card-text">
           <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
             <input type="hidden" name="cmd" value="_donations" />
@@ -50,9 +46,6 @@ $(document).ready(function() {
           <a href=${data[i].youtubeURL} class="btn btn-primary">
             Youtube Link
           </a>
-          <div style="width:100%;height:100%;width: 820px; height: 461.25px; float: none; clear: both; margin: 2px auto;">
-  <embed src="http://www.youtube.com/v/${youtubekey}?version=3&amp;hl=en_US&amp;rel=0&amp;autohide=1&amp;autoplay=1" wmode="transparent" type="application/x-shockwave-flash" width="100%" height="100%" allowfullscreen="true" title="Adobe Flash Player">
-</div>
         </div>
       </div>
       </br>`;
