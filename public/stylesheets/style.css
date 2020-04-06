@@ -31,18 +31,29 @@ a.nav-link {
 
 .videocard {
 background-color: rgb(116, 117, 117);
-
+margin: 0 auto;
 }
 
 h2 {
-  color: white !important;
+  color: white;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  font-size: 20px;
 }
 
 label {
-  color: white !important;
+  color: white;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
+
+.col-md-6 {
+  margin: 0 auto;
+}
+
+.custom-control {
+  margin-bottom: 8px;
+}
+
+
 
 
 
