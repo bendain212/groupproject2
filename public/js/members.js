@@ -1,6 +1,6 @@
-$(document).ready(function () {
+$(document).ready(function() {
   let paypalUsername = "";
-  $.get("/api/user_data").then(function (data) {
+  $.get("/api/user_data").then(function(data) {
     $(".member-name").text(data.email);
     objuserid = data.id;
     console.log(data);
@@ -21,7 +21,7 @@ $(document).ready(function () {
     return ID;
   }
 
-  $.get("/api/post").then(function (data) {
+  $.get("/api/post").then(function(data) {
     console.log(data);
     for (let i = 0; i < data.length; i++) {
       let youtubekey = YouTubeGetID(data[i].youtubeURL);
@@ -35,7 +35,7 @@ $(document).ready(function () {
         
         <div class = notvideocard>
           <div style="width:100%;height:100%;width: 480; height: 450px; float: none; clear: both; margin: 2px auto;">
-            <embed src="http://www.youtube.com/v/${youtubekey}?version=3&amp;hl=en_US&amp;rel=0&amp;autohide=1&amp;autoplay=1" wmode="transparent" type="application/x-shockwave-flash" width="100%" height="100%" allowfullscreen="true" title="Adobe Flash Player">
+            <embed src="http://www.youtube.com/v/${youtubekey}?version=3&amp;hl=en_US&amp;rel=0&amp;autohide=1&amp;autoplay=0" wmode="transparent" type="application/x-shockwave-flash" width="100%" height="100%" allowfullscreen="true" title="Adobe Flash Player">
        </div>
             </div>
 
