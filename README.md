@@ -51,6 +51,6 @@ in your bash / command line
 
 ## Authors
 
-- **Benjamin Dain** - (github.com/)
+- **Benjamin Dain** - (github.com/bendain212)
 - **Carolina Szyman** - (github.com/Carolinams7)
-- **Cyrus Pooniwala** - (github.com/)
+- **Cyrus Pooniwala** - (github.com/Cpooniwala)
