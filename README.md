@@ -53,4 +53,4 @@ in your bash / command line
 
 - **Benjamin Dain** - (github.com/bendain212)
 - **Carolina Szyman** - (github.com/Carolinams7)
-- **Cyrus Pooniwala** - (github.com/Cpooniwala)
+- **Cyrus Pooniwala** - (github.com/cpooniwala)
