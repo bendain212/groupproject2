@@ -13,7 +13,7 @@ The artist will accept donations through this app from the viwers.
 - Upload videos (comedian);
 - Receive/provide donations through Paypal.
 
-### Running this appArtment locally
+### Running this app locally
 
 Live version:
 
